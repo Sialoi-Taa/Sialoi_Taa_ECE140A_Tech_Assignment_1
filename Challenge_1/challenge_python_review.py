@@ -136,11 +136,6 @@ def count_letters(input_string):
         dictionary[elem.lower()] = dictionary[elem.lower()] + 1
     
     return dictionary
-'''
-if __name__ == '__main__':
-    print(count_letters("The quick brown fox jumps over the lazy dog."))
-    print(count_letters("Web serving with FastAPI!"))
-'''
 
 # Question 5
 def filter_strings(list_of_strings):
@@ -153,7 +148,11 @@ def filter_strings(list_of_strings):
     # This try and except will determin if the list of strings is
     # empty and if true, then the function will return nothing
     try:
-        len(list_of_strings)
+        if len(list_of_strings) == 0:
+            return
+        for elem in list_of_strings:
+            if type(list_of_strings) != str:
+                return
     except TypeError:
         return
     
@@ -169,7 +168,7 @@ def filter_strings(list_of_strings):
             if elem2.lower() in vowels:
                 vowel_present = True
             char_count = char_count + 1
-            if char_count > 4:
+            if (char_count > 4) and (not character_min):
                 character_min = True
         if character_min and vowel_present:
             filtered_list.append(elem)        
