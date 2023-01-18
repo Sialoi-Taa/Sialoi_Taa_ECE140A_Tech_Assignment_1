@@ -227,14 +227,19 @@ def filter_strings(list_of_strings):
                 vowel_present = True
             # Increment the character count
             char_count = char_count + 1
-            
+            # If the character count is more than 4 and 
+            # the character_min boolean is still False,
+            # flip character_min to True.
             if (char_count > 4) and (not character_min):
                 character_min = True
+        # If both of the booleams are True, then add
+        # the string to the filtered list.
         if character_min and vowel_present:
             filtered_list.append(elem)        
+        # Resets the booleans after each string has been assessed
         character_min = False
         vowel_present = False
-
+    # Return the filtered list
     return filtered_list
 
 if __name__ == "__main__":
