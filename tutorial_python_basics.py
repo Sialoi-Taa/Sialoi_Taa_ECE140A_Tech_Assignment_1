@@ -1,1 +1,1 @@
-print("Hello, ECE 140A World!")
+print("Hello, ECE 140A World!") # A print statement to the terminal
